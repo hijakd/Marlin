@@ -56,7 +56,7 @@
 
 /*** @section info ***/
 
-// Author info of this build printed to the host during boot and M115
+/* Author info of this build printed to the host during boot and M115 */
 #define STRING_CONFIG_H_AUTHOR "(hijakd, CRX Monster)" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
@@ -65,7 +65,7 @@
 #define HotendAllMetal
 #define crx
 
-// Choose the name from boards.h that matches your setup
+/* Choose the name from boards.h that matches your setup */
 #ifndef MOTHERBOARD
   #define MOTHERBOARD BOARD_BTT_SKR_PRO_V1_2
 #endif

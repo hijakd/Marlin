@@ -1170,9 +1170,9 @@
 #endif
 
 /* XY Frequency limit */
-/* Reduce resonance by limiting the frequency of small zigzag infill moves. */
-/* See https://hydraraptor.blogspot.com/2010/12/frequency-limit.html */
-/* Use M201 F<freq> G<min%> to change limits at runtime. */
+/* Reduce resonance by limiting the frequency of small zigzag infill moves.
+ * See https://hydraraptor.blogspot.com/2010/12/frequency-limit.html
+ * Use M201 F<freq> G<min%> to change limits at runtime. */
 //#define XY_FREQUENCY_LIMIT      10 // (Hz) Maximum frequency of small zigzag infill moves. Set with M201 F<hertz>.
 #ifdef XY_FREQUENCY_LIMIT
   #define XY_FREQUENCY_MIN_PERCENT 5 // (%) Minimum FR percentage to apply. Set with M201 G<min%>.
@@ -1182,16 +1182,16 @@
 /* Adds extra movement to axes on direction-changes to account for backlash. */
 //#define BACKLASH_COMPENSATION
 #if ENABLED(BACKLASH_COMPENSATION)
-  /* Define values for backlash distance and correction. */
-  /* If BACKLASH_GCODE is enabled these values are the defaults. */
+  /* Define values for backlash distance and correction.
+   * If BACKLASH_GCODE is enabled these values are the defaults. */
   #define BACKLASH_DISTANCE_MM { 0, 0, 0 } // (linear=mm, rotational=°) One value for each linear axis
   #define BACKLASH_CORRECTION    0.0       // 0.0 = no correction; 1.0 = full correction
 
   /* Add steps for motor direction changes on CORE kinematics */
   //#define CORE_BACKLASH
 
-  /* Set BACKLASH_SMOOTHING_MM to spread backlash correction over multiple segments */
-  /* to reduce print artifacts. (Enabling this is costly in memory and computation!) */
+  /* Set BACKLASH_SMOOTHING_MM to spread backlash correction over multiple segments
+   * to reduce print artifacts. (Enabling this is costly in memory and computation!) */
   //#define BACKLASH_SMOOTHING_MM 3 // (mm)
 
   /* Add runtime configuration and tuning of backlash values (M425) */
@@ -1202,9 +1202,9 @@
     #define MEASURE_BACKLASH_WHEN_PROBING
 
     #if ENABLED(MEASURE_BACKLASH_WHEN_PROBING)
-      /* When measuring, the probe will move up to BACKLASH_MEASUREMENT_LIMIT */
-      /* mm away from point of contact in BACKLASH_MEASUREMENT_RESOLUTION */
-      /* increments while checking for the contact to be broken. */
+      /* When measuring, the probe will move up to BACKLASH_MEASUREMENT_LIMIT
+       * mm away from point of contact in BACKLASH_MEASUREMENT_RESOLUTION
+       * increments while checking for the contact to be broken. */
       #define BACKLASH_MEASUREMENT_LIMIT       0.5   // (mm)
       #define BACKLASH_MEASUREMENT_RESOLUTION  0.005 // (mm)
       #define BACKLASH_MEASUREMENT_FEEDRATE    Z_PROBE_FEEDRATE_SLOW // (mm/min)
@@ -3184,7 +3184,7 @@
   
 /*** @section tmc/stallguard ***/
 
-  #define SENSORLESS_HOMING // StallGuard capable drivers only
+  // #define SENSORLESS_HOMING // StallGuard capable drivers only
 
   #if ANY(SENSORLESS_HOMING, SENSORLESS_PROBING)
     // TMC2209: 0...255. TMC2130: -64...63
@@ -3684,8 +3684,7 @@
  */
 //#define NO_WORKSPACE_OFFSETS
 
-/* Disable M206 and M428 if you don't need home offsets.
- */
+/* Disable M206 and M428 if you don't need home offsets. */
 //#define NO_HOME_OFFSETS
 
 /* CNC G-code options
